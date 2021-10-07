@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<title>Heart Disease Prediction</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<div class="w3-container w3-orange">
+    <h2>Heart Disease Prediction</h2>
+</div>
+
+
+<form action="{{ url_for('predict')}}"method="post" class="w3-container">
+
+    <p>
+        <input class="w3-input" type="number" id="age" name="age" required>
+        <label>Age*</label></p>
+
+    <p>
+        <select id="sex" name="sex" class="w3-select">
+            <option value="1">Male</option>
+            <option value="0">Female</option>
+        </select>
+        <label>Gender</label></p>
+
+    <p>
+        <input type="number" id="cp" name="cp" min="0" max="3" class="w3-input" required>
+        <label>Chest Pain Type (Range between 0-3)</label></p>
+
+    <p>
+        <input type="number" id="trestbps" name="trestbps" min="94" max="250" class="w3-input" required>
+        <label>Resting Blood Pressure (Range between 94 and 250)</label></p>
+
+    <p>
+        <input type="number" id="chol" name="chol" min="126" max="564" class="w3-input" required>
+        <label>Serum Cholestrol (Range between 126 and 564)</label></p>
+
+    <p>
+        <select id="fbs" name="fbs"  class="w3-select">
+            <option value="0">Less than 120 mg/dl</option>
+            <option value="1">Greater than 120 mg/dl</option>
+        </select>
+        <label>Fasting Blood Sugar</label></p>
+
+    <p>
+        <input type="number" id="restecg" name="restecg" min="0" max="2" class="w3-input" required>
+        <label>Resting ECG Results (Range between 0 and 2)</label></p>
+
+    <p>
+        <input type="number" id="thalach" name="thalach" min="71" max="202" class="w3-input" required>
+        <label>Max Heart Rate Achieved (Range between 71-202)</label></p>
+
+    <p>
+        <select id="exang" name="exang" class="w3-select">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+        <label>Exercise-induced Angina</label></p>
+
+    <p>
+        <input type="number" id="oldpeak" name="oldpeak" min="0" max="6.2" step="any" class="w3-input" required>
+        <label>ST depression induced by exercise relative to rest (Range between 0-6.2)</label></p>
+
+    <p>
+        <input type="number" id="slope" name="slope" min="0" max="2" class="w3-input" required>
+        <label>Slope of the peak exercise ST segment (Range between 0-2)</label></p>
+    <p>
+        <input type="number" id="ca" name="ca" placeholder="range between 0-4"  min="0" max="4" class="w3-input" required>
+        <label>Number of major vessels(between 0 and 4)</label></p>
+
+
+    <p>
+        <input type="number" id="thal" name="thal" placeholder="range between 0-3"  min="0" max="3" class="w3-input" required>
+        <label>THAL(between 0 and 3)</label></p>
+
+    <p>
+        <button  type="submit" class="w3-btn w3-orange" style="text-align:center">PREDICT </button></p>
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<title>Prediction Result</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<header class="w3-container w3-teal">
+  <h2>Heart Disease Prediction</h2>
+</header>
+
+<div class="w3-container">
+       <center>
+                <div class="container">
+                    {% if prediction == 1%}
+                    <h1 style="color:red;" >YES! You might have a heart Disease.<br></h1>
+                    <h3>Do consult Doctor.</h3>
+                    <img src="{{ url_for('static', filename='sad.jpg') }}" style="height:50%; width:50%; text-align:center" alt="Sad">
+                    {% elif prediction == 0%}
+                    <h1 style="color:green;">NO! You might not have a heart Disease.<br></h1>
+                    <h3>Healthy Heart</h3>
+                     <ol class="col-4 " style="background-color: red "></ol>
+                    <img src="{{ url_for('static', filename='happy.jpg') }}" style="height:50%; width:50%; text-align:center" alt="Happy">
+                  {% endif %}
+                </div>
+        </center>
+</div>
+
+</body>
+</html>
